@@ -1,55 +1,34 @@
 ﻿using Simple.Result;
 
-var successResult = CreateGuid();
-Console.WriteLine($"Result: Status='{successResult.Status}', " +
-                  $"Message='{successResult.Message}', " +
-                  $"Type='{successResult.Type}', " +
-                  $"Value='{successResult.Value}', " +
-                  $"Exception='{successResult.Exception}'");
-
-// Result: Status='Created', Message='Resource was successfully created', Type='System.Guid', Value='ebbcfe53-bbe8-4fcd-b5fa-c558bef084e8', Exception=''
-
-var exceptionResult = CreateGuidAndThrow();
-Console.WriteLine($"Result: Status='{exceptionResult.Status}', " +
-                  $"Message='{exceptionResult.Message}', " +
-                  $"Type='{exceptionResult.Type}', " +
-                  $"Value='{exceptionResult.Value}', " +
-                  $"Exception='{exceptionResult.Exception}'");
-
-// Result: Status='Exception', Message='Operation resulted in an exception', Type='System.Guid', Value='00000000-0000-0000-0000-000000000000', Exception='System.Exception: An example exception
-// at Program.<<Main>$>g__CreateGuidAndThrow|0_1() in <path>\Simple.Result\Simple.Result.Example\Program.cs:line 48'
-
-var customResult = new Result<Guid>
+var nonGenericSuccessResult = Result.OfSuccess("Some non-generic message");
+var nonGenericCustomSuccessResult = new Result
 {
-    Status = Status.NotFound,
-    Message = "A custom not found result"
+    Message = "Some custom non-generic message",
+    Status = Status.Success
 };
 
-Console.WriteLine($"Result: Status='{customResult.Status}', " +
-                  $"Message='{customResult.Message}', " +
-                  $"Type='{customResult.Type}', " +
-                  $"Value='{customResult.Value}', " +
-                  $"Exception='{customResult.Exception}'");
-
-// Result: Status='NotFound', Message='A custom not found result', Type='System.Guid', Value='00000000-0000-0000-0000-000000000000', Exception=''
-return;
-
-
-static Result<Guid> CreateGuid()
+var resultValue = Guid.NewGuid();
+var genericSuccessResult = Result<Guid>.OfSuccess(resultValue, "Some generic message");
+var genericCustomSuccessResult = new Result<Guid>
 {
-    var guid = Guid.NewGuid();
-    return Result<Guid>.OfCreated(guid);
-}
+    Message = "Some custom generic message",
+    Status = Status.Success,
+    Value = resultValue
+};
 
-static Result<Guid> CreateGuidAndThrow()
+var exception = new Exception("Some exception");
+var nonGenericExceptionResult = Result.OfException(exception, "some non-generic message");
+var nonGenericCustomExceptionResult = new Result
 {
-    try
-    {
-        // simulate an exception
-        throw new Exception("An example exception");
-    }
-    catch (Exception e)
-    {
-        return Result<Guid>.OfException(e);
-    }
-}
+    Message = "Some custom non-generic message",
+    Status = Status.Exception,
+    Exception = exception
+};
+
+var genericExceptionResult = Result<Guid>.OfException(exception, "Some generic message");
+var genericCustomExceptionResult = new Result<Guid>
+{
+    Message = "Some custom generic message",
+    Status = Status.Success,
+    Exception = exception
+};

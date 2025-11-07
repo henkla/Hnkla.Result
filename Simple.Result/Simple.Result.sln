@@ -4,6 +4,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Result", "Simple.Res
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Result.Example", "..\Simple.Result.Example\Simple.Result.Example.csproj", "{AC0E8299-3ACD-479D-A696-DE84938B204F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Result.Tests", "..\Simple.Result.Tests\Simple.Result.Tests.csproj", "{E0BF8097-31EA-4112-BEB4-FFB4E6DCB441}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{471C0330-E14A-4079-9CB3-64C5C7C68CB7}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\README.md = ..\README.md
+		..\LICENSE = ..\LICENSE
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +27,9 @@ Global
 		{AC0E8299-3ACD-479D-A696-DE84938B204F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC0E8299-3ACD-479D-A696-DE84938B204F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC0E8299-3ACD-479D-A696-DE84938B204F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0BF8097-31EA-4112-BEB4-FFB4E6DCB441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0BF8097-31EA-4112-BEB4-FFB4E6DCB441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0BF8097-31EA-4112-BEB4-FFB4E6DCB441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0BF8097-31EA-4112-BEB4-FFB4E6DCB441}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
