@@ -8,4 +8,20 @@
         <WarningLevel>3</WarningLevel>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <PackageId>Simple.Result</PackageId>
+        <Authors>Henrik Larsson</Authors>
+        <PackageProjectUrl>https://github.com/henkla/Simple.Result</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/henkla/Simple.Result</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageDescription>A small and simple C# library for representing operation results in a consistent and type-safe way.</PackageDescription>
+        <PackageTags>dotnet;library;csharp</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="" />
+    </ItemGroup>
+    
 </Project>
