@@ -46,7 +46,7 @@ public class Result<T> : Result
     // ... and more
 }
 
-// Status enum
+// Available statuses
 public enum Status
 {
     Success = 0,
