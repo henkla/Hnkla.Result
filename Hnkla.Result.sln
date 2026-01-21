@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{471C0330-E
 		global.json = global.json
 		README.md = README.md
 		.github\workflows\pipeline-publish-nuget.yml = .github\workflows\pipeline-publish-nuget.yml
+		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hnkla.Result.Example", "Hnkla.Result.Example\Hnkla.Result.Example.csproj", "{17238F36-5630-4B8D-B13C-8EBB45ED19AE}"

@@ -1,13 +1,5 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <WarningLevel>3</WarningLevel>
-    </PropertyGroup>
-
+    
     <PropertyGroup>
         <PackageId>Hnkla.Result</PackageId>
         <Authors>Henrik Larsson</Authors>
