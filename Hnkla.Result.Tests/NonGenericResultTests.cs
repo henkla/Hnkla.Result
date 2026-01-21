@@ -1,4 +1,4 @@
-namespace Simple.Result.Tests;
+namespace Hnkla.Result.Tests;
 
 public class NonGenericResultTests
 {

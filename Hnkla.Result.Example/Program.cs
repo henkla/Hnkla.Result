@@ -1,4 +1,4 @@
-﻿using Simple.Result;
+﻿using Hnkla.Result;
 
 var nonGenericSuccessResult = Result.OfSuccess("Some non-generic message");
 var nonGenericCustomSuccessResult = new Result

@@ -9,10 +9,10 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageId>Simple.Results</PackageId>
+        <PackageId>Hnkla.Result</PackageId>
         <Authors>Henrik Larsson</Authors>
-        <PackageProjectUrl>https://github.com/henkla/Simple.Result</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/henkla/Simple.Result</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/henkla/Hnkla.Result</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/henkla/Hnkla.Result</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageDescription>A small and simple C# library for representing operation results in a consistent and type-safe way.</PackageDescription>
         <PackageTags>dotnet;library;csharp</PackageTags>

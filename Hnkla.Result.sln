@@ -1,10 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Result", "Simple.Result\Simple.Result.csproj", "{94E32A5B-5EDE-4729-B31E-A0552A4717A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hnkla.Result", "Hnkla.Result\Hnkla.Result.csproj", "{94E32A5B-5EDE-4729-B31E-A0552A4717A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{471C0330-E14A-4079-9CB3-64C5C7C68CB7}"
 	ProjectSection(SolutionItems) = preProject
-		..\README.md = ..\README.md
 		LICENSE = LICENSE
 		.gitignore = .gitignore
 		global.json = global.json
@@ -12,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{471C0330-E
 		.github\workflows\pipeline-publish-nuget.yml = .github\workflows\pipeline-publish-nuget.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Result.Example", "Simple.Result.Example\Simple.Result.Example.csproj", "{17238F36-5630-4B8D-B13C-8EBB45ED19AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hnkla.Result.Example", "Hnkla.Result.Example\Hnkla.Result.Example.csproj", "{17238F36-5630-4B8D-B13C-8EBB45ED19AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Result.Tests", "Simple.Result.Tests\Simple.Result.Tests.csproj", "{7408F48D-4833-46E9-A9B1-FD6DD823729D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hnkla.Result.Tests", "Hnkla.Result.Tests\Hnkla.Result.Tests.csproj", "{7408F48D-4833-46E9-A9B1-FD6DD823729D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

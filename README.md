@@ -1,5 +1,5 @@
 
-# Simple.Result
+# Hnkla.Result
 
 A small and simple C# library for representing operation results in a consistent and type-safe way.  
 
@@ -14,7 +14,7 @@ The library provides two main types: `Result` (non-generic) and `Result<T>` (gen
 
 ## Installation
 
-`dotnet add package Simple.Result`
+`dotnet add package Hnkla.Result`
 
 ## API Overview
 

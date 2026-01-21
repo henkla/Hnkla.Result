@@ -1,4 +1,4 @@
-namespace Simple.Result;
+namespace Hnkla.Result;
 
 public enum Status
 {
