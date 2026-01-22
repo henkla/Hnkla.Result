@@ -5,6 +5,7 @@ A small and simple C# library for representing operation results in a consistent
 
 The library provides two main types: `Result` (non-generic) and `Result<T>` (generic), backed by a `Status` enum describing possible operation outcomes.
 
+> See [Hnkla.Result.ToActionResult](https://github.com/henkla/Hnkla.Result.ToActionResult) for extension library that easily converts `Result` and `Result<T>` to `ActionResult` and `ActionResult<T>`(for use in classic ASP.NET Core controllers).
 ## Features
 
 - Clear representation of both successful and failed operations.
@@ -65,25 +66,66 @@ public enum Status
 
 ## Examples
 
-### Using non-generic `Result`
+### Non-generic `Result`
+
+#### Service layer (generating Result)
 ```csharp
-Result r = Result.OfSuccess("Saved successfully");
-if (r.IsSuccess)
+try
 {
-    Console.WriteLine(r.Message); // "Saved successfully"
+    var user = new User { Id = 1, Name = "Anna" };
+    // ... some error occurs
+    return Result.OfSuccess("Operation was successful");
+}
+catch (Exception ex) 
+{
+    return Result.OfServerError(ex, "Something bad happened...");    
 }
 ```
 
-### Using generic `Result<T>`
+#### Caller/API layer (consuming Result)
 ```csharp
-Result<User> r = Result<User>.OfSuccess(new User { Id = 1, Name = "Anna" });
-if (r.IsSuccess)
+// caller/api layer
+
+var result = someService.SomeMethod(); // Type = Result
+if (result.IsSuccess)
 {
-    Console.WriteLine(r.Value.Name); // "Anna"
+    Console.WriteLine(result.Message); // "Operation was successful"
 }
-else
+else 
 {
-    Console.WriteLine(r.Message);
+    Console.WriteLine(result.Message); // "Something bad happened..."
+}
+```
+
+### Generic `Result<T>`
+
+#### Service layer (generating `Result<T>`)
+```csharp
+try
+{
+    var user = new User { Id = 1, Name = "Anna" };
+    // ... some error occurs
+    return Result.OfCreated<User>(user, "Operation was successful");
+}
+catch (Exception ex) 
+{
+    return Result.OfServerError(ex, "Something bad happened...");    
+}
+```
+
+#### Caller/API layer (consuming `Result<T>`)
+```csharp
+// caller/api layer
+
+var result = someService.SomeMethod(); // Type = Result<User>
+if (result.IsSuccess)
+{
+    Console.WriteLine(result.Message); // "Operation was successful"
+    Console.WriteLine($"Name: {result:Value.Name}"); // "Name: Anna"
+}
+else 
+{
+    Console.WriteLine(result.Message); // "Something bad happened..."
 }
 ```
 
@@ -92,7 +134,7 @@ else
 [HttpGet("{id}")]
 public ActionResult<UserDto> GetUser(int id)
 {
-    var result = _userService.GetUser(id); // Result<UserDto>
+    var result = someService.SomeMethod(id); // Result<UserDto>
 
     if (result.IsSuccess)
     {
